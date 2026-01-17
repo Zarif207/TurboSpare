@@ -12,7 +12,6 @@ import Ending from "@/components/Ending";
 export default function Home() {
   return (
     <>
-    
       <Hero />
       <Features />
       <Categories />

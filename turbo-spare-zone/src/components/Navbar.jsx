@@ -129,9 +129,6 @@ export default function Navbar() {
             <Link href="/items" className="hover:text-white transition">
               SHOP
             </Link>
-            <Link href="/pages" className="hover:text-white transition">
-              PAGES
-            </Link>
             <Link href="/blog" className="hover:text-white transition">
               BLOG
             </Link>

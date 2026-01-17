@@ -1,5 +1,13 @@
 import items from "@/data/items.json";
 import Image from "next/image";
+import {
+  FaEye,
+  FaShieldAlt,
+  FaUndo,
+  FaMoneyBillWave,
+  FaHeart,
+  FaStar,
+} from "react-icons/fa";
 
 export default async function ItemDetails({ params }) {
   const { id } = await params;
@@ -27,7 +35,7 @@ export default async function ItemDetails({ params }) {
             </div>
           </div>
 
-          {/* Thumbnails (static UI) */}
+          {/* Thumbnails */}
           <div className="flex gap-4 mt-4">
             {[1, 2, 3, 4].map((i) => (
               <div
@@ -36,7 +44,7 @@ export default async function ItemDetails({ params }) {
               >
                 <Image
                   src={item.image}
-                  alt="thumb"
+                  alt="thumbnail"
                   width={80}
                   height={80}
                   className="object-contain"
@@ -48,16 +56,19 @@ export default async function ItemDetails({ params }) {
 
         {/* RIGHT – DETAILS */}
         <div>
-          <h1 className="text-3xl font-semibold mb-2">
-            {item.name}
-          </h1>
+          <h1 className="text-3xl font-semibold mb-2">{item.name}</h1>
 
           {/* Rating */}
-          <div className="flex items-center gap-1 text-yellow-400 mb-3">
+          <div className="flex items-center gap-1 mb-3">
             {Array.from({ length: 5 }).map((_, i) => (
-              <span key={i}>
-                {i < item.rating ? "★" : "☆"}
-              </span>
+              <FaStar
+                key={i}
+                className={
+                  i < item.rating
+                    ? "text-yellow-400"
+                    : "text-gray-300"
+                }
+              />
             ))}
           </div>
 
@@ -76,23 +87,36 @@ export default async function ItemDetails({ params }) {
             </span>
           </div>
 
-          {/* Description (static text like demo) */}
+          {/* Description */}
           <p className="text-gray-600 leading-relaxed mb-5">
-            Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil
-            impedit quo minus id quod maxime placeat facere possimus, omnis
-            voluptas assumenda est, omnis dolor repellendus.
+            This high-quality automotive component is manufactured to meet OEM
+            standards, ensuring reliable performance and long service life.
+            Built using durable materials, it improves vehicle efficiency,
+            reduces wear, and delivers consistent results even under demanding
+            driving conditions.
           </p>
 
           {/* Viewing now */}
           <p className="flex items-center gap-2 text-gray-600 mb-4">
-            👁 <span className="font-medium">22</span> people are viewing this right now
+            <FaEye />
+            <span className="font-medium">22</span>
+            people are viewing this product right now
           </p>
 
           {/* Features */}
           <ul className="space-y-2 text-gray-600 mb-6">
-            <li>🛡 1 Year Al Jazeera Brand Warranty</li>
-            <li>↩ 30 Day Return Policy</li>
-            <li>💵 Cash on Delivery available</li>
+            <li className="flex items-center gap-2">
+              <FaShieldAlt className="text-yellow-500" />
+              1 Year Manufacturer Warranty
+            </li>
+            <li className="flex items-center gap-2">
+              <FaUndo className="text-yellow-500" />
+              30 Day Easy Return Policy
+            </li>
+            <li className="flex items-center gap-2">
+              <FaMoneyBillWave className="text-yellow-500" />
+              Cash on Delivery Available
+            </li>
           </ul>
 
           {/* Colors */}
@@ -121,7 +145,9 @@ export default async function ItemDetails({ params }) {
               Add To Cart
             </button>
 
-            <button className="text-2xl">♡</button>
+            <button className="text-xl text-gray-400 hover:text-red-500 transition">
+              <FaHeart />
+            </button>
           </div>
 
           {/* Buy now */}
@@ -133,15 +159,16 @@ export default async function ItemDetails({ params }) {
           <div className="text-sm text-gray-600 space-y-2 border-t pt-4">
             <p><strong>SKU:</strong> 3010</p>
             <p>
-              <strong>Category:</strong> Brake Disc, Deals Of The Week, Featured Products
+              <strong>Category:</strong> Brake Disc, Featured Products, Deals
             </p>
             <p>
-              <strong>Tags:</strong> blue, gold, gray, green, red
+              <strong>Tags:</strong> premium, durable, performance, genuine
             </p>
           </div>
 
-          {/* Payment */}
-          <p className="mt-4 font-medium">Guaranteed safe checkout</p>
+          <p className="mt-4 font-medium">
+            Guaranteed safe & secure checkout
+          </p>
         </div>
       </div>
     </div>

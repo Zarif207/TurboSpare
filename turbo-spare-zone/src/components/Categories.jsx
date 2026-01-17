@@ -30,41 +30,63 @@ const categories = [
 
 function Categories() {
   return (
-    <section className="max-w-7xl mx-auto px-4 py-20">
-      {/* Header */}
-      <div className="text-center mb-14">
-        <h2 className="text-4xl font-bold text-gray-900">
-          Shop by <span className="text-yellow-500">Category</span>
-        </h2>
-        <p className="text-gray-500 mt-3">
-          Find the right parts faster from our popular categories
-        </p>
-      </div>
+    <section className="relative overflow-hidden py-24">
+      {/* Background accent */}
+      <div className="absolute inset-0  -skew-y-3 origin-top" />
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        {categories.map((cat) => (
-          <div
-            key={cat.id}
-            className="group border rounded-lg p-8 text-center cursor-pointer transition-all duration-300 hover:shadow-xl hover:border-yellow-500"
-          >
-            {/* Icon */}
-            <div className="text-4xl text-yellow-500 mb-5 flex justify-center transition-transform duration-300 group-hover:scale-110">
-              {cat.icon}
+      <div className="relative max-w-7xl mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <h2 className="text-4xl font-extrabold text-gray-900">
+            Explore by <span className="text-yellow-500">Category</span>
+          </h2>
+          <p className="text-gray-500 mt-4 max-w-xl mx-auto">
+            A curated selection of essential automobile parts, engineered for
+            performance and reliability.
+          </p>
+        </div>
+
+        {/* Zig-Zag Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-20">
+          {categories.map((cat, index) => (
+            <div
+              key={cat.id}
+              className={`relative group ${
+                index % 2 === 1 ? "md:mt-16" : ""
+              }`}
+            >
+              {/* Card */}
+              <div className="bg-white rounded-2xl p-10 shadow-lg border border-gray-100 transition-all duration-500 hover:-translate-y-4 hover:shadow-2xl">
+                {/* Floating icon */}
+                <div className="absolute -top-8 left-10 w-16 h-16 rounded-2xl bg-yellow-500 flex items-center justify-center text-white text-3xl shadow-lg transition-transform duration-300 group-hover:rotate-6">
+                  {cat.icon}
+                </div>
+
+                {/* Content */}
+                <div className="mt-10">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {cat.title}
+                  </h3>
+
+                  <p className="text-gray-500 mb-6">{cat.items}</p>
+
+                  {/* Accent line */}
+                  <div className="h-1 w-12 bg-yellow-500 transition-all duration-300 group-hover:w-20" />
+
+                  {/* CTA */}
+                  <button className="mt-6 text-sm font-semibold text-yellow-600 hover:text-yellow-700 transition">
+                    View Products →
+                  </button>
+                </div>
+              </div>
+
+              {/* Decorative number */}
+              <span className="absolute -bottom-10 right-6 text-7xl font-extrabold text-gray-100 select-none">
+                {String(index + 1).padStart(2, "0")}
+              </span>
             </div>
-
-            {/* Title */}
-            <h3 className="text-lg font-semibold text-gray-900 mb-2">
-              {cat.title}
-            </h3>
-
-            {/* Sub text */}
-            <p className="text-sm text-gray-500">{cat.items}</p>
-
-            {/* Hover underline */}
-            <div className="h-1 w-0 bg-yellow-500 mx-auto mt-4 transition-all duration-300 group-hover:w-12"></div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

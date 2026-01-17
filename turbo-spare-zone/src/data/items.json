@@ -1,7 +1,7 @@
 [
   {
     "id": "1",
-    "name": "Steam Engine Model E1",
+    "name": "Zbrake Disc for BMW",
     "price": 6900,
     "oldPrice": 9400,
     "discount": 27,
@@ -12,11 +12,11 @@
     "warranty": "1 Year Manufacturer Warranty",
     "category": "Engine Parts",
     "tags": ["engine", "steam", "mechanical"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/BrakeDiscforBMW_2cef1b4e-6e81-4734-aaf0-e65b8e803d47_1024x1024.webp"
   },
   {
     "id": "2",
-    "name": "Steel Rim 9×22.5",
+    "name": "Brake Pads for Chevrolet",
     "price": 3600,
     "oldPrice": 5600,
     "discount": 36,
@@ -27,11 +27,11 @@
     "warranty": "6 Months Replacement Warranty",
     "category": "Wheels & Rims",
     "tags": ["rim", "wheel", "steel"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/BrakePadsforChevrolet_662d666e-5f0e-4d0e-baf7-dcaba6ba9bbb_1024x1024.webp"
   },
   {
     "id": "3",
-    "name": "Brake Pads for Chevrolet",
+    "name": "V6 Engine Piston",
     "price": 4900,
     "oldPrice": 7200,
     "discount": 32,
@@ -42,7 +42,7 @@
     "warranty": "1 Year Brand Warranty",
     "category": "Brake System",
     "tags": ["brake", "pads", "chevrolet"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/V6EnginePiston_93835955-9d11-4240-9efb-e7251c94b57f_1024x1024.webp"
   },
   {
     "id": "4",
@@ -57,11 +57,11 @@
     "warranty": "30 Days Replacement Policy",
     "category": "Interior Accessories",
     "tags": ["steering", "interior", "comfort"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/SteeringWheelCover_417f5817-7da2-4941-900c-6d23ccf66a2e_1024x1024.webp"
   },
   {
     "id": "5",
-    "name": "V6 Engine Piston",
+    "name": "Steel Rim 9×22.5",
     "price": 9900,
     "oldPrice": 12500,
     "discount": 21,
@@ -72,11 +72,11 @@
     "warranty": "1 Year Manufacturer Warranty",
     "category": "Engine Components",
     "tags": ["piston", "v6", "engine"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/SteelRim9x22.5_a4c020f0-3096-4695-819a-5d550dae608d_1024x1024.webp"
   },
   {
     "id": "6",
-    "name": "Car Brake Disc",
+    "name": "Steam Engine Model E1",
     "price": 2400,
     "oldPrice": 3600,
     "discount": 33,
@@ -87,11 +87,11 @@
     "warranty": "6 Months Service Warranty",
     "category": "Brake System",
     "tags": ["brake", "disc", "safety"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/SteamEngineModel_3b983396-a997-4db1-bbbd-73f4b0a1208a_1024x1024.webp"
   },
   {
     "id": "7",
-    "name": "Engine Oil Premium",
+    "name": "Silent Block Bushes",
     "price": 1800,
     "oldPrice": 2600,
     "discount": 31,
@@ -102,11 +102,11 @@
     "warranty": "Genuine Product Guarantee",
     "category": "Lubricants",
     "tags": ["engine oil", "lubricant", "performance"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/SilentBlockBushes_3eafd970-bea8-4f99-a329-83af64370165_1024x1024.webp"
   },
   {
     "id": "8",
-    "name": "Air Filter Pro",
+    "name": "Piston Rod Clevis",
     "price": 950,
     "oldPrice": 1400,
     "discount": 32,
@@ -117,11 +117,11 @@
     "warranty": "3 Months Replacement Warranty",
     "category": "Filters",
     "tags": ["air filter", "engine", "maintenance"],
-    "image": "/images/items/FootPedalHighQuality_22993f6e-725b-46e1-a7b3-620f21ff2713_1024x1024.jpg"
+    "image": "/images/items/PistonRodClevis_348ff041-5e20-4e81-9d1d-30f68f5a51c7_1024x1024.webp"
   },
   {
     "id": "9",
-    "name": "Suspension Bushing",
+    "name": "Foot Pedal High Quality",
     "price": 1200,
     "oldPrice": 1800,
     "discount": 33,

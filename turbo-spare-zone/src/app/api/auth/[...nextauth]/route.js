@@ -12,18 +12,18 @@ const handler = NextAuth({
       },
 
       async authorize(credentials) {
-        // 🔐 Basic validation
+      
         if (!credentials?.email || !credentials?.password) {
           return null;
         }
 
-        // 🔴 TEMP AUTH LOGIC (DEV MODE)
-        // Any email + password >= 6 chars is accepted
+        
+       
         if (credentials.password.length < 6) {
           return null;
         }
 
-        // ✅ User object (this creates the session)
+       
         return {
           id: credentials.email, // must be unique
           name: credentials.email.split("@")[0],
