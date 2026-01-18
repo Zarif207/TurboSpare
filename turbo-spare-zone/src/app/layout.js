@@ -1,17 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Inter } from "next/font/google";
+
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AuthProvider from "@/components/AuthProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// ✅ Use Inter instead of Geist (Geist breaks Next 14 builds)
+const inter = Inter({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -19,15 +16,10 @@ export const metadata = {
   description: "Auto Parts Store",
 };
 
-
-
-
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} antialiased`}>
         <AuthProvider>
           <Navbar />
           {children}
