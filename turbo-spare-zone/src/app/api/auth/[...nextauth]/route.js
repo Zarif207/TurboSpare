@@ -1,34 +1,40 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import GoogleProvider from "next-auth/providers/google";
 
-const handler = NextAuth({
+// Example credentials auth (replace with DB logic)
+async function authorize(credentials) {
+  const { email, password } = credentials;
+
+  // ⚠️ Replace this with real DB check
+  if (email === "admin@test.com" && password === "123456") {
+    return {
+      id: "1",
+      name: "Admin",
+      email: "admin@test.com",
+    };
+  }
+
+  return null;
+}
+
+export const authOptions = {
   providers: [
+    // ✅ Google Provider
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    }),
+
+    // ✅ Credentials Provider
     CredentialsProvider({
       name: "Credentials",
-
       credentials: {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
       },
-
       async authorize(credentials) {
-      
-        if (!credentials?.email || !credentials?.password) {
-          return null;
-        }
-
-        
-       
-        if (credentials.password.length < 6) {
-          return null;
-        }
-
-       
-        return {
-          id: credentials.email, // must be unique
-          name: credentials.email.split("@")[0],
-          email: credentials.email,
-        };
+        return authorize(credentials);
       },
     }),
   ],
@@ -41,23 +47,9 @@ const handler = NextAuth({
     strategy: "jwt",
   },
 
-  callbacks: {
-    async jwt({ token, user }) {
-      if (user) {
-        token.id = user.id;
-      }
-      return token;
-    },
-
-    async session({ session, token }) {
-      if (token) {
-        session.user.id = token.id;
-      }
-      return session;
-    },
-  },
-
   secret: process.env.NEXTAUTH_SECRET,
-});
+};
+
+const handler = NextAuth(authOptions);
 
 export { handler as GET, handler as POST };

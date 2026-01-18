@@ -36,11 +36,18 @@ export default function LoginPage() {
     router.replace("/");
   };
 
+  const handleGoogleLogin = async () => {
+    await signIn("google", {
+      callbackUrl: "/",
+    });
+  };
+
   return (
     <main className="min-h-screen flex items-center justify-center bg-gray-50">
       <div className="w-full max-w-md p-8 rounded-xl border bg-white">
         <h1 className="text-3xl font-bold mb-6 text-center">Login</h1>
 
+        {/* Email */}
         <input
           type="email"
           placeholder="Email"
@@ -49,6 +56,7 @@ export default function LoginPage() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
+        {/* Password */}
         <input
           type="password"
           placeholder="Password"
@@ -57,6 +65,7 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
+        {/* Credentials Login */}
         <button
           onClick={handleLogin}
           disabled={loading}
@@ -64,6 +73,22 @@ export default function LoginPage() {
           hover:bg-yellow-500 transition disabled:opacity-60 font-semibold"
         >
           {loading ? "Logging in..." : "Login"}
+        </button>
+
+        {/* Divider */}
+        <div className="flex items-center gap-3 my-6">
+          <div className="flex-1 h-px bg-gray-300" />
+          <span className="text-sm text-gray-500">OR</span>
+          <div className="flex-1 h-px bg-gray-300" />
+        </div>
+
+        {/* Google Login */}
+        <button
+          onClick={handleGoogleLogin}
+          className="w-full py-3 border rounded font-semibold
+          hover:bg-gray-100 transition"
+        >
+          Continue with Google
         </button>
       </div>
     </main>
