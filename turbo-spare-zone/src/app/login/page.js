@@ -37,8 +37,8 @@ export default function LoginPage() {
     router.replace("/");
   };
 
-  const handleGoogleLogin = async () => {
-    await signIn("google", { callbackUrl: "/" });
+  const handleGoogleLogin = () => {
+    signIn("google", { callbackUrl: "/" });
   };
 
   return (
@@ -65,24 +65,20 @@ export default function LoginPage() {
         <button
           onClick={handleLogin}
           disabled={loading}
-          className="w-full py-3 bg-yellow-400 text-black rounded
-          hover:bg-yellow-500 transition disabled:opacity-60 font-semibold"
+          className="w-full py-3 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500"
         >
           {loading ? "Logging in..." : "Login"}
         </button>
 
-        {/* Divider */}
         <div className="flex items-center gap-3 my-6">
           <div className="flex-1 h-px bg-gray-300" />
           <span className="text-sm text-gray-500">OR</span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 
-        {/* Google Login */}
         <button
           onClick={handleGoogleLogin}
-          className="w-full py-3 border rounded font-semibold
-          hover:bg-gray-100 transition flex items-center justify-center gap-3"
+          className="w-full py-3 border rounded font-semibold flex items-center justify-center gap-3 hover:bg-gray-100"
         >
           <FcGoogle size={22} />
           Continue with Google

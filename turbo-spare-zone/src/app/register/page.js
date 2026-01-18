@@ -19,37 +19,31 @@ export default function RegisterPage() {
       return;
     }
 
-    if (password.length < 6) {
-      toast.fire({
-        icon: "error",
-        title: "Password must be at least 6 characters",
-      });
+    setLoading(true);
+
+    const res = await fetch("/api/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      setLoading(false);
+      toast.fire({ icon: "error", title: data.error });
       return;
     }
 
-    setLoading(true);
-
-    // ⚠️ You MUST save user in DB before this (see explanation below)
-
-    const res = await signIn("credentials", {
+    await signIn("credentials", {
       email,
       password,
       redirect: false,
     });
 
     setLoading(false);
-
-    if (res?.error) {
-      toast.fire({ icon: "error", title: "Registration failed" });
-      return;
-    }
-
     toast.fire({ icon: "success", title: "Account created 🎉" });
     router.replace("/");
-  };
-
-  const handleGoogleLogin = async () => {
-    await signIn("google", { callbackUrl: "/" });
   };
 
   return (
@@ -84,24 +78,20 @@ export default function RegisterPage() {
         <button
           onClick={handleRegister}
           disabled={loading}
-          className="w-full py-3 bg-yellow-400 text-black rounded
-          hover:bg-yellow-500 transition disabled:opacity-60 font-semibold"
+          className="w-full py-3 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-500"
         >
           {loading ? "Creating account..." : "Create Account"}
         </button>
 
-        {/* Divider */}
         <div className="flex items-center gap-3 my-6">
           <div className="flex-1 h-px bg-gray-300" />
           <span className="text-sm text-gray-500">OR</span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 
-        {/* Google Register */}
         <button
-          onClick={handleGoogleLogin}
-          className="w-full py-3 border rounded font-semibold
-          hover:bg-gray-100 transition flex items-center justify-center gap-3"
+          onClick={() => signIn("google", { callbackUrl: "/" })}
+          className="w-full py-3 border rounded font-semibold flex items-center justify-center gap-3 hover:bg-gray-100"
         >
           <FcGoogle size={22} />
           Continue with Google
