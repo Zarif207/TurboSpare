@@ -4,6 +4,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "@/lib/toast";
+import { FcGoogle } from "react-icons/fc";
 
 export default function RegisterPage() {
   const router = useRouter();
@@ -28,7 +29,7 @@ export default function RegisterPage() {
 
     setLoading(true);
 
-    // 🔴 later: save to DB
+    // ⚠️ You MUST save user in DB before this (see explanation below)
 
     const res = await signIn("credentials", {
       email,
@@ -45,6 +46,10 @@ export default function RegisterPage() {
 
     toast.fire({ icon: "success", title: "Account created 🎉" });
     router.replace("/");
+  };
+
+  const handleGoogleLogin = async () => {
+    await signIn("google", { callbackUrl: "/" });
   };
 
   return (
@@ -83,6 +88,23 @@ export default function RegisterPage() {
           hover:bg-yellow-500 transition disabled:opacity-60 font-semibold"
         >
           {loading ? "Creating account..." : "Create Account"}
+        </button>
+
+        {/* Divider */}
+        <div className="flex items-center gap-3 my-6">
+          <div className="flex-1 h-px bg-gray-300" />
+          <span className="text-sm text-gray-500">OR</span>
+          <div className="flex-1 h-px bg-gray-300" />
+        </div>
+
+        {/* Google Register */}
+        <button
+          onClick={handleGoogleLogin}
+          className="w-full py-3 border rounded font-semibold
+          hover:bg-gray-100 transition flex items-center justify-center gap-3"
+        >
+          <FcGoogle size={22} />
+          Continue with Google
         </button>
       </div>
     </main>

@@ -4,6 +4,7 @@ import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { toast } from "@/lib/toast";
+import { FcGoogle } from "react-icons/fc";
 
 export default function LoginPage() {
   const router = useRouter();
@@ -37,9 +38,7 @@ export default function LoginPage() {
   };
 
   const handleGoogleLogin = async () => {
-    await signIn("google", {
-      callbackUrl: "/",
-    });
+    await signIn("google", { callbackUrl: "/" });
   };
 
   return (
@@ -47,7 +46,6 @@ export default function LoginPage() {
       <div className="w-full max-w-md p-8 rounded-xl border bg-white">
         <h1 className="text-3xl font-bold mb-6 text-center">Login</h1>
 
-        {/* Email */}
         <input
           type="email"
           placeholder="Email"
@@ -56,7 +54,6 @@ export default function LoginPage() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
-        {/* Password */}
         <input
           type="password"
           placeholder="Password"
@@ -65,7 +62,6 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        {/* Credentials Login */}
         <button
           onClick={handleLogin}
           disabled={loading}
@@ -74,8 +70,6 @@ export default function LoginPage() {
         >
           {loading ? "Logging in..." : "Login"}
         </button>
-
-        
 
         {/* Divider */}
         <div className="flex items-center gap-3 my-6">
@@ -88,8 +82,9 @@ export default function LoginPage() {
         <button
           onClick={handleGoogleLogin}
           className="w-full py-3 border rounded font-semibold
-          hover:bg-gray-100 transition"
+          hover:bg-gray-100 transition flex items-center justify-center gap-3"
         >
+          <FcGoogle size={22} />
           Continue with Google
         </button>
       </div>
