@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { users } from "../auth/[...nextauth]/route";
+import { users } from "@/lib/users";
 
 export async function POST(req) {
   const { name, email, password } = await req.json();
@@ -23,7 +23,7 @@ export async function POST(req) {
     id: Date.now().toString(),
     name,
     email,
-    password, // ⚠️ later hash this
+    password, // ⚠️ hash later
   });
 
   return NextResponse.json({ success: true });
