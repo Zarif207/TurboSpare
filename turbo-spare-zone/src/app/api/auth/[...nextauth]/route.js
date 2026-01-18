@@ -2,11 +2,9 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
 
-// Example credentials auth (replace with DB logic)
 async function authorize(credentials) {
   const { email, password } = credentials;
 
-  // ⚠️ Replace this with real DB check
   if (email === "admin@test.com" && password === "123456") {
     return {
       id: "1",
@@ -20,13 +18,13 @@ async function authorize(credentials) {
 
 export const authOptions = {
   providers: [
-    // ✅ Google Provider
+   
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     }),
 
-    // ✅ Credentials Provider
+    
     CredentialsProvider({
       name: "Credentials",
       credentials: {
