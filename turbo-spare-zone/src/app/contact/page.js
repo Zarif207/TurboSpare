@@ -23,7 +23,7 @@ function Contact() {
         <div className="space-y-8">
           <h2 className="text-3xl font-bold">Get In Touch</h2>
           <p className="text-zinc-400 leading-relaxed">
-            Whether you're looking for premium automobile parts, technical
+            Whether you are looking for premium automobile parts, technical
             guidance, or order support — TurboSpare delivers expert help with
             precision and speed.
           </p>

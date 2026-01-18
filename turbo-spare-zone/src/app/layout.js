@@ -19,6 +19,9 @@ export const metadata = {
   description: "Auto Parts Store",
 };
 
+
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
