@@ -46,6 +46,7 @@ export default function LoginPage() {
       <div className="w-full max-w-md p-8 rounded-xl border bg-white">
         <h1 className="text-3xl font-bold mb-6 text-center">Login</h1>
 
+        {/* Email */}
         <input
           type="email"
           placeholder="Email"
@@ -54,6 +55,7 @@ export default function LoginPage() {
           onChange={(e) => setEmail(e.target.value)}
         />
 
+        {/* Password */}
         <input
           type="password"
           placeholder="Password"
@@ -62,6 +64,7 @@ export default function LoginPage() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
+        {/* Credentials Login */}
         <button
           onClick={handleLogin}
           disabled={loading}
@@ -70,12 +73,14 @@ export default function LoginPage() {
           {loading ? "Logging in..." : "Login"}
         </button>
 
+        {/* Divider */}
         <div className="flex items-center gap-3 my-6">
           <div className="flex-1 h-px bg-gray-300" />
           <span className="text-sm text-gray-500">OR</span>
           <div className="flex-1 h-px bg-gray-300" />
         </div>
 
+        {/* Google Login */}
         <button
           onClick={handleGoogleLogin}
           className="w-full py-3 border rounded font-semibold flex items-center justify-center gap-3 hover:bg-gray-100"
@@ -83,6 +88,17 @@ export default function LoginPage() {
           <FcGoogle size={22} />
           Continue with Google
         </button>
+
+        {/* 🔐 Credential Info Box */}
+        <div className="mt-5 p-4 border rounded bg-gray-50 text-sm">
+          <p className="font-semibold mb-1">Login Credentials:</p>
+          <p>
+            <span className="font-medium">Email:</span> zarif207@gmail.com
+          </p>
+          <p>
+            <span className="font-medium">Password:</span> Turbopass207
+          </p>
+        </div>
       </div>
     </main>
   );
