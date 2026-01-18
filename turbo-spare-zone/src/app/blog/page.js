@@ -5,7 +5,7 @@ const blogs = [
     id: 1,
     title: "How Brake Systems Work in Modern Cars",
     image:
-      "https://images.unsplash.com/photo-1518303675041-1c5c9c8b7a3b",
+      "https://www.valvolineglobal.com/499ba9/globalassets/vcom/article%20tile%20blocks/european%20images%20collection/brakes.png?format=webp&quality=80",
     excerpt:
       "Brake systems are one of the most critical safety components in automobiles. Learn how disc brakes, ABS, and brake fluids work together.",
     date: "Apr 15, 2024",
@@ -15,7 +15,7 @@ const blogs = [
     id: 2,
     title: "Suspension Parts Explained: Comfort Meets Control",
     image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70",
+      "https://am-autoparts.ae/wp-content/uploads/2024/09/10-Car-Suspension-Parts-and-Their-Function.jpg",
     excerpt:
       "From shock absorbers to struts and control arms — discover how suspension components improve handling and ride comfort.",
     date: "Mar 28, 2024",
@@ -24,8 +24,7 @@ const blogs = [
   {
     id: 3,
     title: "Engine Components You Should Know About",
-    image:
-      "https://images.unsplash.com/photo-1607860108855-64acf2078ed9",
+    image: "https://images.unsplash.com/photo-1607860108855-64acf2078ed9",
     excerpt:
       "Pistons, crankshafts, camshafts — understanding engine parts helps you maintain better performance and longevity.",
     date: "Feb 12, 2024",
@@ -93,9 +92,7 @@ function Blog() {
 
       {/* Call to Action */}
       <section className="bg-[] py-16 text-center">
-        <h2 className="text-3xl font-bold">
-          Want Expert Auto Parts Advice?
-        </h2>
+        <h2 className="text-3xl font-bold">Want Expert Auto Parts Advice?</h2>
         <p className="mt-4 text-red-100">
           Stay updated with professional guides and modern automotive trends.
         </p>

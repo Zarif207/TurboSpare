@@ -74,7 +74,7 @@ function Contact() {
               <label className="text-sm text-zinc-400">Full Name</label>
               <input
                 type="text"
-                placeholder="John Doe"
+                placeholder="Name"
                 className="mt-2 w-full px-4 py-3 rounded-xl bg-black border border-zinc-700 focus:outline-none focus:border-red-500 transition"
               />
             </div>
@@ -83,7 +83,7 @@ function Contact() {
               <label className="text-sm text-zinc-400">Email Address</label>
               <input
                 type="email"
-                placeholder="john@example.com"
+                placeholder="Email"
                 className="mt-2 w-full px-4 py-3 rounded-xl bg-black border border-zinc-700 focus:outline-none focus:border-red-500 transition"
               />
             </div>
